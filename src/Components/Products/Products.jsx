@@ -13,7 +13,7 @@ export default function Products() {
     return (
         <div>
             <h1>Products</h1>
-            <div className="flex flex-row gap-2 justify-center items-center">
+            <div className="flex flex-row justify-center items-center">
             {
                 products.map((product) => (
                     <SingleProduct key={product.id} productDetails={product} />

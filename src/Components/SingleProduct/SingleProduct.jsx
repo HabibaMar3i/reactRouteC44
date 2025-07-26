@@ -3,7 +3,7 @@ import React from 'react'
 export default function SingleProduct({ productDetails }) {
     const { id, name, price, quantity, onSale } = productDetails;
     return (
-        <div className='bg-gray-100 p-4 rounded-md shadow-md m-4'>
+        <div className='bg-gray-100 p-4 rounded-md shadow-md m-4 w-1/3'>
             <p>ID: {id}</p>
             <p>Name: {name}</p>
             <p>Price: {price}</p>
