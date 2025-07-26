@@ -1,0 +1,25 @@
+import React, { useState } from 'react'
+import SingleProduct from '../SingleProduct/SingleProduct'
+
+export default function Products() {
+    const [products, setProducts] = useState([
+        { id: 1, name: 'Laptop', price: 1000, quantity: 5 },
+        { id: 2, name: 'Mobile', price: 500, quantity: 10 },
+        { id: 3, name: 'Tablet', price: 300, quantity: 15 },
+        { id: 4, name: 'Monitor', price: 200, quantity: 8 },
+        { id: 5, name: 'Keyboard', price: 50, quantity: 20  },
+        { id: 6, name: 'Mouse', price: 25, quantity: 30  }
+    ])
+    return (
+        <div>
+            <h1>Products</h1>
+            <div className="flex flex-row gap-2 justify-center items-center">
+            {
+                products.map((product) => (
+                    <SingleProduct key={product.id} productDetails={product} />
+                ))
+            }
+            </div>
+        </div>
+    )
+}

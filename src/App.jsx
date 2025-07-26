@@ -5,6 +5,7 @@ import Contacts from './Components/Contacts/Contacts'
 import State from './Components/State/State'
 import Parent from './Components/Parent/Parent'
 import { useState } from 'react'
+import Products from './Components/Products/Products'
 
 function App() {
   const [age, setAge] = useState(23)
@@ -20,6 +21,7 @@ function App() {
       <Contacts />
       <State />
       <Parent age={age}/>
+      <Products />
     </>
   )
 }
