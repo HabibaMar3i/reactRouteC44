@@ -10,13 +10,22 @@ export default function Products() {
         { id: 5, name: 'Keyboard', price: 50, quantity: 20, onSale: "false"},
         { id: 6, name: 'Mouse', price: 25, quantity: 30, onSale: "true"}
     ])
+
+    let deleteProduct = (id) => {
+        const myProducts = structuredClone(products);
+        const filteredProducts = myProducts.filter((products)=> {
+            return products.id !== id;
+        })
+        setProducts(filteredProducts);
+    }
+
     return (
         <div>
             <h1>Products</h1>
             <div className="flex flex-row justify-center items-center">
             {
                 products.map((product) => (
-                    <SingleProduct key={product.id} productDetails={product} />
+                    <SingleProduct key={product.id} deleteP={deleteProduct} productDetails={product} />
                 ))
             }
             </div>

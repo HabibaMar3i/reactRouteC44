@@ -13,7 +13,7 @@ function App() {
   return (
     <>
       <h1>Test app</h1>
-      <h1 class="text-3xl font-bold underline bg-blue-100">
+      <h1 className="text-3xl font-bold underline bg-blue-100">
         Hello world!
       </h1>
       <Home />
