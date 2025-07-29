@@ -19,13 +19,27 @@ export default function Products() {
         setProducts(filteredProducts);
     }
 
+    const [quantity, setQuantity] = useState(0)
+
+    const changeQuantity = (index) => {
+        const myProducts = structuredClone(products);
+        setQuantity(myProducts[index].quantity++);
+        setProducts(myProducts);
+    }
+
     return (
         <div>
             <h1>Products</h1>
             <div className="flex flex-row justify-center items-center">
             {
-                products.map((product) => (
-                    <SingleProduct key={product.id} deleteP={deleteProduct} productDetails={product} />
+                products.map((product, index) => (
+                    <SingleProduct
+                        key={product.id}
+                        index={index}
+                        deleteP={deleteProduct}
+                        updateP={() => changeQuantity(index)}
+                        productDetails={product}
+                    />
                 ))
             }
             </div>
